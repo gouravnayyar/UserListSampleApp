@@ -15,35 +15,17 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
         self.loadData()
     }
 
     func loadData() {
-
-        guard let url  = URL(string: "https://jsonplaceholder.typicode.com/users") else {
-            fatalError("URl should be correct")
+        let decoder = JSONDecoder()
+        decoder.decode([User].self, fromURL: "https://jsonplaceholder.typicode.com/users") { [weak self] (users) in
+            self?.users = users
+            self?.tableView.reloadData()
         }
-
-        let session = URLSession.shared
-        let task = session.dataTask(with: url) { (data, response, error) in
-
-            guard let data = data else { return }
-
-            do {
-                let decoder = JSONDecoder()
-                decoder.dateDecodingStrategy = .iso8601
-
-                self.users = try decoder.decode([User].self, from: data)
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
-        task.resume()
     }
+
 }
 
 extension ViewController {

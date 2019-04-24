@@ -7,3 +7,34 @@
 //
 
 import Foundation
+
+
+extension JSONDecoder {
+
+
+    func decode<T: Decodable>(_ type: T.Type, fromURL url: String, completion: @escaping(T) -> Void) {
+
+        guard let url  = URL(string:url) else {
+            fatalError("URl should be correct")
+        }
+
+        let session = URLSession.shared
+        let task = session.dataTask(with: url) { (data, response, error) in
+
+            guard let data = data else { return }
+
+            do {
+
+                // This need to be set else you cannot make decoder work for Custom Model Object type
+                self.dateDecodingStrategy = .iso8601
+                let response = try self.decode(type, from: data)
+                DispatchQueue.main.async { // return the data on the main thread
+                    completion(response)
+                }
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        task.resume()
+    }
+}

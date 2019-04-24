@@ -14,6 +14,8 @@
 		6EF12194227000FB000C35AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EF12192227000FB000C35AF /* LaunchScreen.storyboard */; };
 		6EF1219F227000FB000C35AF /* UserListSampleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF1219E227000FB000C35AF /* UserListSampleAppTests.swift */; };
 		6EF121AA227000FB000C35AF /* UserListSampleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF121A9227000FB000C35AF /* UserListSampleAppUITests.swift */; };
+		6EF121B822700289000C35AF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF121B722700289000C35AF /* User.swift */; };
+		6EF121BA2270093F000C35AF /* Remote+JSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF121B92270093F000C35AF /* Remote+JSONDecoder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		6EF121A5227000FB000C35AF /* UserListSampleAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserListSampleAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EF121A9227000FB000C35AF /* UserListSampleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListSampleAppUITests.swift; sourceTree = "<group>"; };
 		6EF121AB227000FB000C35AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6EF121B722700289000C35AF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		6EF121B92270093F000C35AF /* Remote+JSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Remote+JSONDecoder.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				6EF12190227000FB000C35AF /* Assets.xcassets */,
 				6EF12192227000FB000C35AF /* LaunchScreen.storyboard */,
 				6EF12195227000FB000C35AF /* Info.plist */,
+				6EF121B722700289000C35AF /* User.swift */,
+				6EF121B92270093F000C35AF /* Remote+JSONDecoder.swift */,
 			);
 			path = UserListSampleApp;
 			sourceTree = "<group>";
@@ -258,6 +264,8 @@
 			files = (
 				6EF1218C227000FA000C35AF /* ViewController.swift in Sources */,
 				6EF1218A227000FA000C35AF /* AppDelegate.swift in Sources */,
+				6EF121BA2270093F000C35AF /* Remote+JSONDecoder.swift in Sources */,
+				6EF121B822700289000C35AF /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

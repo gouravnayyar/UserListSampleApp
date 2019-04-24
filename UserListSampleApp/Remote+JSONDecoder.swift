@@ -24,15 +24,13 @@ extension JSONDecoder {
             guard let data = data else { return }
 
             do {
-                let decoder = JSONDecoder()
-                decoder.dateDecodingStrategy = .iso8601
 
-                let response = try decoder.decode(type, from: data)
-
+                // This need to be set else you cannot make decoder work for Custom Model Object type
+                self.dateDecodingStrategy = .iso8601
+                let response = try self.decode(type, from: data)
                 DispatchQueue.main.async { // return the data on the main thread
                     completion(response)
                 }
-
             } catch {
                 print(error.localizedDescription)
             }

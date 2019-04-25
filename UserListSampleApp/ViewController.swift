@@ -26,26 +26,6 @@ class ViewController: UITableViewController {
         }
 
         dataSource.fetch("https://jsonplaceholder.typicode.com/users")
-    }
-}
-
-extension ViewController {
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.dataSource.users.count
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-
-        let user = self.dataSource.users[indexPath.row]
-        cell.textLabel?.text = user.username
-        cell.detailTextLabel?.text = user.email
-
-        return cell
+        tableView.dataSource = dataSource
     }
 }

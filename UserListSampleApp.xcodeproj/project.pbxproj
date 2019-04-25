@@ -83,7 +83,6 @@
 		6EF1217D227000FA000C35AF = {
 			isa = PBXGroup;
 			children = (
-				6EF121CF22715043000C35AF /* UserDataSource.swift */,
 				6EF12188227000FA000C35AF /* UserListSampleApp */,
 				6EF1219D227000FB000C35AF /* UserListSampleAppTests */,
 				6EF121A8227000FB000C35AF /* UserListSampleAppUITests */,
@@ -106,6 +105,7 @@
 			children = (
 				6EF12189227000FA000C35AF /* AppDelegate.swift */,
 				6EF1218B227000FA000C35AF /* ViewController.swift */,
+				6EF121CF22715043000C35AF /* UserDataSource.swift */,
 				6EF1218D227000FA000C35AF /* Main.storyboard */,
 				6EF12190227000FB000C35AF /* Assets.xcassets */,
 				6EF12192227000FB000C35AF /* LaunchScreen.storyboard */,

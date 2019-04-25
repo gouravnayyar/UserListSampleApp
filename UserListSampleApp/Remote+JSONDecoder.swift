@@ -14,6 +14,7 @@ extension JSONDecoder {
 
     func decode<T: Decodable>(_ type: T.Type, fromURL url: String, completion: @escaping(T) -> Void) {
 
+        let semaphore = DispatchSemaphore(value: 0)
         guard let url  = URL(string:url) else {
             fatalError("URl should be correct")
         }
@@ -29,12 +30,16 @@ extension JSONDecoder {
                 self.dateDecodingStrategy = .iso8601
                 let response = try self.decode(type, from: data)
                 DispatchQueue.main.async { // return the data on the main thread
+                    sleep(3)
                     completion(response)
                 }
             } catch {
                 print(error.localizedDescription)
             }
+            semaphore.signal()
         }
         task.resume()
+
+        _ = semaphore.wait(timeout: .distantFuture)
     }
 }

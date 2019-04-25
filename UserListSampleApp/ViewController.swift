@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UITableViewController {
 
     var users:[User] = []
+    let dataSource = UserDataSource()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,13 +21,12 @@ class ViewController: UITableViewController {
     }
 
     func loadData() {
-        let decoder = JSONDecoder()
-        decoder.decode([User].self, fromURL: "https://jsonplaceholder.typicode.com/users") { [weak self] (users) in
-            self?.users = users
+        dataSource.dataChanged = { [weak self] in
             self?.tableView.reloadData()
         }
-    }
 
+        dataSource.fetch("https://jsonplaceholder.typicode.com/users")
+    }
 }
 
 extension ViewController {
@@ -35,13 +36,13 @@ extension ViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.users.count
+        return self.dataSource.users.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
-        let user = self.users[indexPath.row]
+        let user = self.dataSource.users[indexPath.row]
         cell.textLabel?.text = user.username
         cell.detailTextLabel?.text = user.email
 

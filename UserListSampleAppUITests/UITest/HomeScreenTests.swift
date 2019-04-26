@@ -1,14 +1,17 @@
 //
-//  UserListSampleAppUITests.swift
+//  HomeScreenTests.swift
 //  UserListSampleAppUITests
 //
-//  Created by Gourav Nayyar on 24/04/19.
+//  Created by Gourav Nayyar on 26/04/19.
 //  Copyright © 2019 Gourav Nayyar. All rights reserved.
 //
 
 import XCTest
 
-class UserListSampleAppUITests: XCTestCase {
+class HomeScreenTests: XCTestCase {
+
+    static let bundleID = "com.gouravnayyar.UserListSampleApp"
+    let app = GNUIApplication(bundleIdentifier: bundleID)
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -27,8 +30,8 @@ class UserListSampleAppUITests: XCTestCase {
     }
 
     func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCTAssertTrue(self.app.homeScreen.waitForScreen(time: 4))
+
     }
 
 }

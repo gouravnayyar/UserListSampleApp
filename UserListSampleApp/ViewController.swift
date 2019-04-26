@@ -13,15 +13,11 @@ class ViewController: UITableViewController {
     var users:[User] = []
     let dataSource = UserDataSource()
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.loadData()
-    }
-
-    func loadData() {
         dataSource.dataChanged = { [weak self] in
+            print("Calling reload data")
             self?.tableView.reloadData()
         }
 

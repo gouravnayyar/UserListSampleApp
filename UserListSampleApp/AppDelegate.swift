@@ -16,6 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.rootViewController = getRootViewController()
+        self.window?.makeKeyAndVisible()
+
         return true
     }
 
@@ -39,6 +43,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+
+    func getRootViewController() -> UIViewController {
+        let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+
+        let usersViewController = storyBoard.instantiateViewController(withIdentifier: "UsersViewController") as! UsersViewController
+        let viewModel = UsersViewModel()
+        usersViewController.userViewModel = viewModel
+
+        let navController = UINavigationController(rootViewController:usersViewController)
+        navController.navigationBar.prefersLargeTitles = true
+        return navController
     }
 
 

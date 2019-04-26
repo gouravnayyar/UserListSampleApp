@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E8720D62272954500FBCC26 /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8720D52272954400FBCC26 /* UsersViewModel.swift */; };
 		6EF1218A227000FA000C35AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF12189227000FA000C35AF /* AppDelegate.swift */; };
-		6EF1218C227000FA000C35AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF1218B227000FA000C35AF /* ViewController.swift */; };
+		6EF1218C227000FA000C35AF /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF1218B227000FA000C35AF /* UsersViewController.swift */; };
 		6EF1218F227000FA000C35AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EF1218D227000FA000C35AF /* Main.storyboard */; };
 		6EF12191227000FB000C35AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EF12190227000FB000C35AF /* Assets.xcassets */; };
 		6EF12194227000FB000C35AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EF12192227000FB000C35AF /* LaunchScreen.storyboard */; };
@@ -16,7 +17,6 @@
 		6EF121AA227000FB000C35AF /* UserListSampleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF121A9227000FB000C35AF /* UserListSampleAppUITests.swift */; };
 		6EF121B822700289000C35AF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF121B722700289000C35AF /* User.swift */; };
 		6EF121BA2270093F000C35AF /* Remote+JSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF121B92270093F000C35AF /* Remote+JSONDecoder.swift */; };
-		6EF121D022715043000C35AF /* UserDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF121CF22715043000C35AF /* UserDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,9 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6E8720D52272954400FBCC26 /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
 		6EF12186227000FA000C35AF /* UserListSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UserListSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EF12189227000FA000C35AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6EF1218B227000FA000C35AF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6EF1218B227000FA000C35AF /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		6EF1218E227000FA000C35AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6EF12190227000FB000C35AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6EF12193227000FB000C35AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -52,7 +53,6 @@
 		6EF121AB227000FB000C35AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6EF121B722700289000C35AF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		6EF121B92270093F000C35AF /* Remote+JSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Remote+JSONDecoder.swift"; sourceTree = "<group>"; };
-		6EF121CF22715043000C35AF /* UserDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +80,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E8720D42272951600FBCC26 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6EF1218B227000FA000C35AF /* UsersViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6E8720D72272A0A200FBCC26 /* APICore */ = {
+			isa = PBXGroup;
+			children = (
+				6EF121B92270093F000C35AF /* Remote+JSONDecoder.swift */,
+			);
+			path = APICore;
+			sourceTree = "<group>";
+		};
+		6E8720D82272A0AC00FBCC26 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6EF121B722700289000C35AF /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6E8720D92272A0B600FBCC26 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6E8720D52272954400FBCC26 /* UsersViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		6EF1217D227000FA000C35AF = {
 			isa = PBXGroup;
 			children = (
@@ -104,14 +136,14 @@
 			isa = PBXGroup;
 			children = (
 				6EF12189227000FA000C35AF /* AppDelegate.swift */,
-				6EF1218B227000FA000C35AF /* ViewController.swift */,
-				6EF121CF22715043000C35AF /* UserDataSource.swift */,
+				6E8720D72272A0A200FBCC26 /* APICore */,
+				6E8720D82272A0AC00FBCC26 /* Model */,
+				6E8720D92272A0B600FBCC26 /* ViewModel */,
+				6E8720D42272951600FBCC26 /* ViewControllers */,
 				6EF1218D227000FA000C35AF /* Main.storyboard */,
 				6EF12190227000FB000C35AF /* Assets.xcassets */,
 				6EF12192227000FB000C35AF /* LaunchScreen.storyboard */,
 				6EF12195227000FB000C35AF /* Info.plist */,
-				6EF121B722700289000C35AF /* User.swift */,
-				6EF121B92270093F000C35AF /* Remote+JSONDecoder.swift */,
 			);
 			path = UserListSampleApp;
 			sourceTree = "<group>";
@@ -265,10 +297,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EF1218C227000FA000C35AF /* ViewController.swift in Sources */,
+				6EF1218C227000FA000C35AF /* UsersViewController.swift in Sources */,
+				6E8720D62272954500FBCC26 /* UsersViewModel.swift in Sources */,
 				6EF1218A227000FA000C35AF /* AppDelegate.swift in Sources */,
 				6EF121BA2270093F000C35AF /* Remote+JSONDecoder.swift in Sources */,
-				6EF121D022715043000C35AF /* UserDataSource.swift in Sources */,
 				6EF121B822700289000C35AF /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

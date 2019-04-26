@@ -30,7 +30,6 @@ extension JSONDecoder {
                 self.dateDecodingStrategy = .iso8601
                 let response = try self.decode(type, from: data)
                 DispatchQueue.main.async { // return the data on the main thread
-                    sleep(3)
                     completion(response)
                 }
             } catch {

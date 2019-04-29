@@ -12,7 +12,7 @@
         <!--Users-->
         <scene sceneID="Y7i-kh-xce">
             <objects>
-                <tableViewController id="0yg-a1-2vh" customClass="ViewController" customModule="UserListSampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="UsersViewController" id="0yg-a1-2vh" customClass="UsersViewController" customModule="UserListSampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="BPl-pK-C8a">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
